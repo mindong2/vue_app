@@ -1,4 +1,4 @@
-# vue_app
+# vue_app -> Hacker News API
 
 ## Project setup
 ```
