@@ -1,8 +1,13 @@
 <template>
   <div id="news">
-    <div v-for="user in fetchItems" :key="user.id">
-      {{ user.title }}
-    </div>
+    <p v-for="item in fetchItems" :key="item.id">
+      <a :href="item.url">{{ item.title }}</a>
+      <small>
+        {{ item.time_ago }} by
+        <!-- router에서 선언해준 params를 item.user로 받아옵니다. -->
+        <router-link :to="`/user/${item.user}`">{{ item.user }}</router-link>
+      </small>
+    </p>
   </div>
 </template>
 

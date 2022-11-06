@@ -1,28 +1,23 @@
 <template>
   <div id="user">
-    <div v-for="user in users" :key="user.id">
-      {{ user.title }}
-    </div>
+    <p>name: {{ userInfo.id }}</p>
+    <p>karma: {{ userInfo.karma }}</p>
+    <p>created: {{ userInfo.created }}</p>
   </div>
 </template>
 
 <script>
-import { fetchUserList } from '@/api/index.js'
 export default {
-  created(){
-    fetchUserList()
-    .then(response => this.users = response.data)
-    .catch(err => console.log(err))
+  computed: {
+    userInfo() {
+      return this.$store.state.user;
+    },
   },
-
-  data(){
-    return {
-      users : []
-    }
-  }
-}
+  created() {
+    const userName = this.$route.params.id;
+    this.$store.dispatch("FETCH_USER", userName);
+  },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

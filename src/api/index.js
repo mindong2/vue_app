@@ -18,8 +18,19 @@ function fetchJobsList() {
   return axios.get(`${config.baseUrl}jobs/1.json`);
 }
 
-function fetchUserList() {
-  return axios.get(`${config.baseUrl}newest/1.json`);
+function fetchUserInfo(username) {
+  return axios.get(`${config.baseUrl}user/${username}.json`);
 }
+
+function fetchItemInfo(id) {
+  return axios.get(`${config.baseUrl}item/${id}.json`);
+}
+
 // export -> 다른 컴포넌트에서 사용시 import { fetchNewsList } 와 같은식으로 불러올수있게 (단일이 아니다.)
-export { fetchNewsList, fetchAskList, fetchJobsList, fetchUserList };
+export {
+  fetchNewsList,
+  fetchAskList,
+  fetchJobsList,
+  fetchUserInfo,
+  fetchItemInfo,
+};
