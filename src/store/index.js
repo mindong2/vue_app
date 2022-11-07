@@ -19,6 +19,9 @@ export default createStore({
     fetchJobs(state) {
       return state.jobs;
     },
+    fetchedItem(state) {
+      return state.item;
+    }
   },
   // import mutation, actions modules
 
