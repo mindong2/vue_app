@@ -1,9 +1,17 @@
 <template>
   <div id="job">
-    <p v-for="job in fetchJobs" :key="job.id">
-      <a :href="job.url" target="_blank">{{ job.title }} </a>
-      <small> {{ job.time_ago }} {{ job.domain }}</small>
-    </p>
+    <ul class="news_list">
+      <li v-for="job in fetchJobs" :key="job.id" class="post">
+        <div>
+          <p class="newsTitle">
+            <a :href="job.url" target="_blank">{{job.title}}</a>
+          </p>
+          <small class="link_text">
+            {{ job.time_ago }} <a :href="job.url" target="_blank">{{ job.domain }}</a>
+          </small> 
+        </div>
+      </li>
+    </ul>
   </div>
 </template>
 

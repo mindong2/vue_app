@@ -14,22 +14,27 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
 .header {
     display: flex;
     background-color: #42b883;
     padding: 8px;
-    margin-bottom: 20px;
 }
 
 nav a {
   font-weight: bold;
   color: #fff;
   text-decoration: none;
+  transition:all .2s linear;
+}
+
+nav a:hover {
+  color: #35495e;
 }
 
 nav a.router-link-exact-active {
   color: #35495e;
+  text-decoration: underline;
 }
+
 </style>
