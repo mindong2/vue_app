@@ -30,7 +30,7 @@
 
           <small class="link_text" v-else>
             {{ item.time_ago }} by
-            <a :href="item.domain">{{ item.domain }}</a>
+            <a :href="item.url" target="_blank">{{ item.domain }}</a>
           </small> 
           <!--  -->
         </div>
