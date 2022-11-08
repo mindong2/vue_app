@@ -26,6 +26,25 @@ export default {
 </script>
 
 <style>
+*{
+  padding: 0;
+  margin: 0;
+}
+html {-ms-overflow-style: none; /* IE and Edge */scrollbar-width: none; /* Firefox */}
+html::-webkit-scrollbar {
+    width: 10px;  /* 스크롤바의 너비 */
+}
+
+html::-webkit-scrollbar-thumb {
+    height: 15%; /* 스크롤바의 길이 */
+    background: #42b883; /* 스크롤바의 색상 */
+    
+    border-radius: 10px;
+}
+
+html::-webkit-scrollbar-track {
+    background: rgba(33, 122, 244, .1);  /*스크롤바 뒷 배경 색상*/
+}
 .fade-enter-active{
   transition: opacity 0.5s linear;
 }

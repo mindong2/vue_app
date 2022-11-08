@@ -22,6 +22,7 @@ export default {
 }
 
 nav a {
+  font-size: 1.5rem;
   font-weight: bold;
   color: #fff;
   text-decoration: none;

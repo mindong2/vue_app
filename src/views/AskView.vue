@@ -1,12 +1,11 @@
 <template>
+  <!-- 컴포넌트화 시키기 전 코드 -> <template>
   <div id="ask">
     <ul class="news_list">
       <li v-for="item in fetchedAsk" :key="item.id" class="post">
-        <!-- 포인트 영역 -->
         <div class="point">
           {{ item.points }}
         </div>
-        <!-- 기타정보 영역 -->
         <div>
           <p class="newsTitle">
             <router-link :to="`item/${item.id}`">
@@ -21,28 +20,22 @@
       </li>
     </ul>
   </div>
+</template> -->
+
+  <div id="asks">
+    <ListItem></ListItem>
+  </div>
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import ListItem from '@/components/ListItem.vue'
 export default {
-  name: "AskView",
-  computed: {
-    // #1 배열 표기법
-    ...mapGetters(["fetchedAsk"]),
-
-    // #2 변수 선언 후 호출
-    // ...mapGetters({
-    //   askItems: "fetchedAsk",
-    // }),
-
-    // #3 기본 호출
-    // ...mapState({
-    //   ask: (state) => state.ask,
-    // }),
-  },
-  created() {
-    this.$store.dispatch("FETCH_ASKS");
-  },
+  name: "askView",
+  components: {
+    ListItem
+  }
 };
 </script>
+
+<style scoped>
+</style>
