@@ -6,13 +6,17 @@
           <div>
             <i class="fas fa-user"></i>
           </div>
+
           <div class="user-description">
             <div>
-                {{ userInfo.id }}
+              <slot name="username"></slot>
             </div>
+
             <div class="time">
-              {{userInfo.created}}
+              <slot name="time"></slot>
             </div>
+
+            <slot name="karma"></slot>
           </div>
         </div>
         
@@ -25,11 +29,12 @@
   
   <script>
   export default {
-    computed: {
-    userInfo() {
-      return this.$store.state.user;
-    },
-  },
+    props : {
+      info :{
+        type: Object,
+        default : {}
+       }
+    }
   };
   </script>
   
