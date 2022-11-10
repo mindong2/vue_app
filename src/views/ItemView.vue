@@ -1,23 +1,11 @@
 <template>
   <div id="item">
     <section> 
-      <!-- <div class="user-container">
-        <div>
-          <i class="fas fa-user"></i>
-        </div>
-        <div class="user-description">
-          <router-link :to="`/user/${fetchedItem.user}`">
-            {{ fetchedItem.user }}
-          </router-link>
-          <div class="time">
-            {{fetchedItem.time_ago}}
-          </div>
-        </div>
-      </div> -->
-
       <UserProfile :info="fetchedItem">
-        <template #username>{{ fetchedItem.user }}</template>
-        <template #time>time: {{ fetchedItem.time_ago }}</template>
+        <template #username>
+          <router-link :to="`/user/${fetchedItem.user}`">{{ fetchedItem.user }}</router-link>
+        </template>
+        <template #time>Posted: {{ fetchedItem.time_ago }}</template>
       </UserProfile>
       
       <h2>

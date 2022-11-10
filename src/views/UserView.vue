@@ -2,12 +2,9 @@
   <div id="user">
     <UserProfile :info="userInfo">
       <template #username>username: {{userInfo.id}}</template>
-      <template #time>time: {{userInfo.created}}</template>
-      <template #karma>karma: {{ userInfo.karma }}</template>
+      <template #time>{{'Joined: ' + userInfo.created || ''}}, </template>
+      <template #karma><span>karma: {{ userInfo.karma || 0 }}</span></template>
     </UserProfile>
-    <!-- <p>name: {{ userInfo.id }}</p>
-    <p>karma: {{ userInfo.karma }}</p>
-    <p>created: {{ userInfo.created }}</p> -->
   </div>
 </template>
 

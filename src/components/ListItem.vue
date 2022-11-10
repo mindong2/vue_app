@@ -84,12 +84,12 @@ export default {
     padding:20px 10px;
     border-bottom: 1px solid #eee;
   }
-  .post a {
+  a {
     text-decoration: none;
     color: #34495e;
     transition: all .15s linear;
   }
-  .post a:hover{
+  a:hover{
     color:#42b883;
     text-decoration: underline;
   }
