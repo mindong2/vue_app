@@ -18,6 +18,9 @@ export default {
   name: "JobsView",
   components: {
     ListItem
+  },
+  created(){
+    this.$store.dispatch("FETCH_JOBS");
   }
 };
 </script>

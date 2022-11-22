@@ -56,19 +56,6 @@ export default {
         }
     }
   },
-//   Router name에 따라 다른 actions를 dispatch
-  created() {
-    const name = this.$route.name;
-
-    if(name === 'news'){
-        this.$store.dispatch("FETCH_NEWS");
-    }else if (name === 'ask'){
-        this.$store.dispatch("FETCH_ASKS");
-    }else if (name === 'jobs'){
-        this.$store.dispatch("FETCH_JOBS");
-    }
-  },
-
 };
 </script>
 
@@ -84,12 +71,12 @@ export default {
     padding:20px 10px;
     border-bottom: 1px solid #eee;
   }
-  a {
+  .post a {
     text-decoration: none;
     color: #34495e;
     transition: all .15s linear;
   }
-  a:hover{
+  .post a:hover{
     color:#42b883;
     text-decoration: underline;
   }

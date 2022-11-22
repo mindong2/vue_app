@@ -33,6 +33,9 @@ export default {
   name: "askView",
   components: {
     ListItem
+  },
+  created(){
+    this.$store.dispatch("FETCH_ASKS");
   }
 };
 </script>

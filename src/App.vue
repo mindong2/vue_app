@@ -6,7 +6,7 @@
       <component :is="Component" :key="route.path" />
     </transition>
   </router-view>
-
+  <Spinner :loading="true"></Spinner>
   <!-- 
     Vue2.xx 버전 Router Transition
     <transition name="fade">
@@ -17,10 +17,12 @@
 
 <script>
 import ToolBar from "@/components/ToolBar.vue";
+import Spinner from "@/components/Spinner.vue";
 
 export default {
   components: {
     ToolBar,
+    Spinner
   },
 };
 </script>
