@@ -35,7 +35,7 @@ export default {
     ListItem
   },
   created(){
-    this.$store.dispatch("FETCH_ASKS");
+    this.$store.dispatch("FETCH_LIST", this.$route.name);
   }
 };
 </script>

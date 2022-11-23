@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
-import ListItem from "../components/ListItem.vue";
+import vuex from "vue-router";
+// import ListItem from "../components/ListItem.vue";
 import NewsView from "../views/NewsView.vue";
 import AskView from "../views/AskView.vue";
 import JobsView from "../views/JobsView.vue";
 import ItemView from "../views/ItemView.vue";
 import UserView from "../views/UserView.vue";
+import store from '../store/index'
 
 const routes = [
   {
@@ -44,5 +46,16 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
+
+router.beforeEach((to, from, next) => {
+  store.commit('startSpinner');
+  setTimeout(() => {
+      next();
+  }, 750);
+});
+
+router.afterEach((to, from) => {
+  store.commit('endSpinner');
+})
 
 export default router;

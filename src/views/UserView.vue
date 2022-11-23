@@ -1,6 +1,6 @@
 <template>
   <div id="user">
-    <UserProfile :info="userInfo">
+    <UserProfile>
       <template #username>username: {{userInfo.id}}</template>
       <template #time>{{'Joined: ' + userInfo.created || ''}}, </template>
       <template #karma><span>karma: {{ userInfo.karma || 0 }}</span></template>

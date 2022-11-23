@@ -29,12 +29,6 @@
   
   <script>
   export default {
-    props : {
-      info :{
-        type: Object,
-        default : {}
-       }
-    }
   };
   </script>
   

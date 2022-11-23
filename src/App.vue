@@ -6,7 +6,7 @@
       <component :is="Component" :key="route.path" />
     </transition>
   </router-view>
-  <Spinner :loading="true"></Spinner>
+  <Spinner :loading="this.$store.state.isLoading"></Spinner>
   <!-- 
     Vue2.xx 버전 Router Transition
     <transition name="fade">

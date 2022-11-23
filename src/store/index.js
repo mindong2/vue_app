@@ -3,21 +3,14 @@ import mutations from "../store/mutations";
 import actions from "../store/actions";
 export default createStore({
   state: {
-    news: [],
-    ask: [],
-    jobs: [],
+    tabList: [],
     user: {},
     item: {},
+    isLoading: false
   },
   getters: {
-    fetchNews(state) {
-      return state.news;
-    },
-    fetchedAsk(state) {
-      return state.ask;
-    },
-    fetchJobs(state) {
-      return state.jobs;
+    fetchedList(state) {
+      return state.item;
     },
     fetchedItem(state) {
       return state.item;

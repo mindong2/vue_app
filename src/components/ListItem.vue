@@ -42,18 +42,10 @@
 <script>
 export default {
   name: "ListItem",
-//   Router name에 따라 다른 state 불러옴
+//   Router name에 따라 다른 state 불러옴 store의 actions 참고
   computed : {
     listItem() {
-        const name = this.$route.name;
-
-        if(name === 'news'){
-            return this.$store.state.news;
-        }else if (name === 'ask'){
-            return this.$store.state.ask;
-        }else if (name === 'jobs'){
-            return this.$store.state.jobs;
-        }
+        return this.$store.state.tabList;
     }
   },
 };
