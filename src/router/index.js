@@ -49,9 +49,7 @@ const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   store.commit('startSpinner');
-  setTimeout(() => {
-      next();
-  }, 750);
+    next();
 });
 
 router.afterEach((to, from) => {
