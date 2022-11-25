@@ -6,7 +6,6 @@ import AskView from "../views/AskView.vue";
 import JobsView from "../views/JobsView.vue";
 import ItemView from "../views/ItemView.vue";
 import UserView from "../views/UserView.vue";
-import store from '../store/index'
 
 const routes = [
   {
@@ -46,14 +45,5 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
 });
-
-router.beforeEach((to, from, next) => {
-  store.commit('startSpinner');
-    next();
-});
-
-router.afterEach((to, from) => {
-  store.commit('endSpinner');
-})
 
 export default router;
