@@ -28,17 +28,13 @@
 </template>
 
 <script>
-import ListItem from '@/components/ListItem.vue'
+import ListItem from "@/components/ListItem.vue";
 export default {
   name: "askView",
   components: {
-    ListItem
+    ListItem,
   },
-  created(){
-    this.$store.dispatch("FETCH_LIST", this.$route.name);
-  }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

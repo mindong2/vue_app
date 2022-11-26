@@ -6,6 +6,7 @@ import AskView from "../views/AskView.vue";
 import JobsView from "../views/JobsView.vue";
 import ItemView from "../views/ItemView.vue";
 import UserView from "../views/UserView.vue";
+import store from "@/store/index";
 
 const routes = [
   {
@@ -17,16 +18,49 @@ const routes = [
     path: "/news",
     name: "news",
     component: NewsView,
+    beforeEnter: (to, from, next) => {
+      store.commit('startSpinner');
+      store.dispatch("FETCH_LIST", to.name)
+        .then(() => {
+          store.commit("endSpinner");
+          next();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   {
     path: "/ask",
     name: "ask",
     component: AskView,
+    beforeEnter: (to, from, next) => {
+      store.commit('startSpinner');
+      store.dispatch("FETCH_LIST", to.name)
+        .then(() => {
+          store.commit("endSpinner");
+          next();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   {
     path: "/jobs",
     name: "jobs",
     component: JobsView,
+    beforeEnter: (to, from, next) => {
+      store.commit('startSpinner');
+      store.dispatch("FETCH_LIST", to.name)
+        .then(() => {
+          store.commit("endSpinner");
+          next();
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    },
   },
   {
     path: "/item/:id",

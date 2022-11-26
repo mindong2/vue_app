@@ -13,15 +13,12 @@
 </template>
 
 <script>
-import ListItem from '@/components/ListItem.vue'
+import ListItem from "@/components/ListItem.vue";
 export default {
   name: "NewsView",
   components: {
-    ListItem
+    ListItem,
   },
-  created(){
-    this.$store.dispatch("FETCH_LIST", this.$route.name);
-  }
 };
 </script>
 

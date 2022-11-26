@@ -1,5 +1,4 @@
 import axios from "axios";
-import store from '../store/index'
 
 // HTTP Request & Response 기본설정
 const config = {
@@ -9,17 +8,14 @@ const config = {
 // API 함수 정리
 
 function fetchItemList(name) { // 리스트 뿌려주는 함수
-  store.commit('startSpinner');
   return axios.get(`${config.baseUrl}${name}/1.json`);
 }
 
 function fetchUserInfo(username) {
-  store.commit('startSpinner');
   return axios.get(`${config.baseUrl}user/${username}.json`);
 }
 
 function fetchItemInfo(id) {
-  store.commit('startSpinner');
   return axios.get(`${config.baseUrl}item/${id}.json`);
 }
 
