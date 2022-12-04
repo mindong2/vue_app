@@ -26,6 +26,9 @@ export default {
     ToolBar,
     Spinner,
   },
+  created(){
+    console.log(process.env.VUE_APP_TITLE)
+  }
 };
 </script>
 
